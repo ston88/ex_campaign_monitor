@@ -3,7 +3,7 @@ defmodule ExCampaignMonitor.Transactional.SmartEmail do
   Representation of a Smart Email
   """
 
-  defstruct [:data, :to, :cc, :bcc, :add_recipients_to_list, :consent_to_track, :status, :message_id]
+  defstruct [:data, :to, :cc, :bcc, :add_recipients_to_list, :attachments, :consent_to_track, :status, :message_id]
   
   @doc "Create a new SmartEmail struct"
   def new(params) do
@@ -19,6 +19,7 @@ defmodule ExCampaignMonitor.Transactional.SmartEmail do
       "CC" => smart_email.cc,
       "BCC" => smart_email.bcc,
       "AddRecipientsToList" => smart_email.add_recipients_to_list,
+      "Attachments" => smart_email.attachments,
       "ConsentToTrack" => smart_email.consent_to_track,
     }
   end
